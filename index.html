@@ -58,7 +58,7 @@
     color:var(--gold);
   }
   .divider .line{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--gold-soft), transparent);}
-  .divider svg{width:22px; height:22px; flex:none;}
+  .divider svg{width:26px; height:26px; flex:none;}
 
   /* ---------- hero ---------- */
   .hero{
@@ -156,22 +156,15 @@
     padding:0 0 clamp(3.5rem,8vh,5.5rem);
   }
   .gallery{
-    display:flex;
-    gap:1.1rem;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding:0.5rem 1.5rem 1rem;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0.7rem;
+    padding:0.5rem 1.25rem 1rem;
   }
-  .gallery::-webkit-scrollbar{display:none;}
   .frame{
-    flex:none;
-    scroll-snap-align:center;
-    width:min(72vw, 300px);
     background:var(--paper);
-    padding:0.55rem 0.55rem 1.1rem;
-    box-shadow:0 18px 36px -18px rgba(42,32,25,0.4), 0 2px 6px rgba(42,32,25,0.12);
+    padding:0.4rem 0.4rem 0.85rem;
+    box-shadow:0 14px 28px -16px rgba(42,32,25,0.4), 0 2px 6px rgba(42,32,25,0.12);
   }
   .frame img{width:100%; height:auto; aspect-ratio:3/4; object-fit:cover;}
   .frame:nth-child(2){transform:rotate(-1.2deg);}
@@ -186,8 +179,6 @@
     .gallery{
       max-width:1040px;
       margin:0 auto;
-      overflow:visible;
-      display:grid;
       grid-template-columns:repeat(4, 1fr);
       align-items:start;
       padding:1rem 2rem;
@@ -266,22 +257,25 @@
     padding:0 1.5rem clamp(3.5rem,8vh,5rem);
   }
   .monogram{
-    position:relative;
-    width:min(64px, 18vw);
-    height:min(64px, 18vw);
-    margin:0 auto 1.4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    line-height:0.82;
+    margin:0 auto 1.3rem;
   }
   .monogram span{
-    position:absolute;
-    top:50%; left:50%;
     font-family:var(--font-am);
     font-weight:700;
-    font-size:min(46px, 13vw);
-    color:var(--gold);
-    line-height:1;
   }
-  .monogram span:first-child{transform:translate(-78%,-52%);}
-  .monogram span:last-child{transform:translate(-18%,-48%); color:var(--burgundy);}
+  .monogram span:first-child{
+    font-size:min(30px, 8.5vw);
+    color:var(--gold);
+  }
+  .monogram span:last-child{
+    font-size:min(50px, 14vw);
+    color:var(--burgundy);
+    margin-top:-2px;
+  }
   footer .thanks-am{
     font-size:1.05rem;
     color:var(--burgundy-deep);
@@ -307,7 +301,7 @@
   <div class="hero-content">
     <p class="eyebrow">ՀԱՐՍԱՆԻՔ</p>
     <h1 class="hero-names">Նարեկ<span class="hero-amp">և</span>Հռիփսիմե</h1>
-    <p class="hero-date">5 սեպտեմբերի · 05.09.2026</p>
+    <p class="hero-date">05.09.2026</p>
   </div>
   <div class="scroll-cue" aria-hidden="true"></div>
 </section>
@@ -315,7 +309,7 @@
 <section class="intro">
   <div class="divider" aria-hidden="true">
     <span class="line"></span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.5 5.5l4.2 4.2M14.3 14.3l4.2 4.2M18.5 5.5l-4.2 4.2M9.7 14.3l-4.2 4.2"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.4 3.8 1.2 6.4 2.4 7.6S17.8 11.6 21.6 12c-3.8.4-6.4 1.2-7.6 2.4S12.4 17.8 12 21.6c-.4-3.8-1.2-6.4-2.4-7.6S6.2 12.4 2.4 12c3.8-.4 6.4-1.2 7.6-2.4S11.6 6.2 12 2.4z"/></svg>
     <span class="line"></span>
   </div>
   <p>Այս օրը մեզ հետ կլինեն մեզ համար ամենաթանկ մարդիկ։ Ուզում ենք, որ այս երեկոն մնա ոչ միայն մեր հիշողության մեջ, այլև ձեր լուսանկարներում՝ այնպես, ինչպես տեսաք այն հենց դուք։</p>
@@ -344,7 +338,7 @@
 </section>
 
 <footer>
-  <div class="monogram" aria-hidden="true"><span>Ն</span><span>Հ</span></div>
+  <div class="monogram" aria-hidden="true"><span>Հ</span><span>Ն</span></div>
   <p class="thanks-am">Շնորհակալություն</p>
   <p class="thanks-ru">որ մեզ հետ եք</p>
   <p class="fdate">05 · 09 · 2026</p>
